@@ -21,6 +21,13 @@ Demo can viewed at [highcharts.base.is](http://highcharts.base.is/).
 
 Additional demo is also available in [JSFiddle](http://jsfiddle.net/sveinn_st/FMJAL/) 
 
+To load a module
+-----
+```js
+import * as Highcharts from 'highcharts/highcharts';
+import HighchartsDownSample from 'highcharts-downsample';
+HighchartsDownSample(Highcharts);
+```
 
 Usage
 -----
