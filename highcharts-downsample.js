@@ -22,7 +22,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-(function (H) {
+// highcharts-downsample:
+// Largest-Triangle-Three-Buckets Downsample plugin for Highcharts
+// https://github.com/sveinn-steinarsson/highcharts-downsample
+(function (factory) {
+  if (typeof module === 'object' && module.exports) {
+      factory['default'] = factory;
+      module.exports = factory;
+  } else if (typeof define === 'function' && define.amd) {
+      define('highcharts-downsample', ['highcharts'], function (Highcharts) {
+          factory(Highcharts);
+          factory.Highcharts = Highcharts;
+          return factory;
+      });
+  } else {
+      factory(Highcharts);
+  }
+} (function (H) {
     "use strict";
 
     if(!Array.isArray) {
@@ -129,4 +145,4 @@ THE SOFTWARE.
         proceed.apply(this, Array.prototype.slice.call(arguments, 1));
     });
 
-}(Highcharts));
+}));
